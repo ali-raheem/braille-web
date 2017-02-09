@@ -8,7 +8,15 @@
     (let [response (app (mock/request :get "/"))]
       (is (= (:status response) 200))
       (is (= (:body response) "Hello World"))))
-
+  (testing "post braille data"
+    (let [response (app (mock/request :post "/decode" {:data "1"}))]
+      (is (= (:status response) 200))
+      (is (= (:body response) "a"))))
+  (testing "post braille data"
+    (let [response (app (mock/request :post "/decode" {:data "999"}))]
+      (is (= (:status response) 200))
+      (is (= (:body response) "???"))))
+  
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
       (is (= (:status response) 404)))))
