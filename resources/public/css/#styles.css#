@@ -1,0 +1,12 @@
+body {
+    background-color: #9b00af;
+}
+
+.footer {
+    background-color: #670175;
+    font-weight: bold;}
+
+.title-bar {
+    background-color: #670175;
+    font-weight: bold;
+}

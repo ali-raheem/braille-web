@@ -25,9 +25,12 @@
   (html5
    [:head
     [:title "Braille Translator"]
-    (include-css "/css/braille-web.css")
+    (include-css "/css/braille.css")
     (include-js "/js/check.js")]
    [:body
+    [:div {:class "title-bar"}
+     "Braille Translator"]
+    [:div {:class "page"}
      [:div {:class "braille-tile"}
       [:input {:type "checkbox" :id "cb1"}] 
       [:input {:type "checkbox" :id "cb2"}] [:br]
@@ -35,14 +38,14 @@
       [:input {:type "checkbox" :id "cb8"}] [:br]
       [:input {:type "checkbox" :id "cb16"}]
       [:input {:type "checkbox" :id "cb32"}]]
-    [:form {:action "/decode" :method "post" :id "braille-form"}
-     [:input#braille-input {:type "hidden" :name "text" :value body}]
-     [:input#braille-input {:type "hidden" :name "data" :id "braille-data" :value "0"}]]
-    [:button.button.add {:type "submit" :onclick "decodeBraille()"} "Decode"]
-    [:div {:class "text-output"}
-     [:b#content-title "Output: "]
-     
-     body]]))
+     [:form {:action "/decode" :method "post" :id "braille-form"}
+      [:input#braille-input {:type "hidden" :name "text" :value body}]
+      [:input#braille-input {:type "hidden" :name "data" :id "braille-data" :value "0"}]]
+     [:button.button.add {:type "submit" :onclick "decodeBraille()"} "Add letter"]
+     [:div {:class "text-output"}
+      [:textarea
+       body]]]
+    [:div {:class "footer"} "2017 -- Dr. Ali Raheem"]] ))
 
 (def get-in-bmap
   #(get braille-map % "???"))
