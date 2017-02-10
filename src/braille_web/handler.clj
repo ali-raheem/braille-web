@@ -21,7 +21,7 @@
    41 "wh", 39 "ed", 47 "er", 45 "ou", 38 "ow", 24 "in"
    4 ",", 28 "!", 44 "."})
 
-(defn home-html [& body]
+(defn post-page [& body]
   (html5
    [:head
     [:title "Braille Translator"]
@@ -47,6 +47,9 @@
        body]]]
     [:div {:class "footer"} "2017 -- Dr. Ali Raheem"]] ))
 
+(defn get-page [& request]
+  (post-page ""))
+
 (def get-in-bmap
   #(get braille-map % "???"))
 
@@ -57,10 +60,10 @@
 
 (defn braille-decode [request]
   (let [data (get-in request [:params :data])]
-    (home-html (apply str (map get-in-bmap (map #(Integer. %) (str/split data #",")))))))
+    (post-page (apply str (map get-in-bmap (map #(Integer. %) (str/split data #",")))))))
 
 (defroutes app-routes
-  (GET "/" [] home-html)
+  (GET "/" [] get-page)
   (POST "/decode" [] braille-decode)
   (route/not-found "404: Page not found."))
 
