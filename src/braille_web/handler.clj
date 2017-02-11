@@ -53,14 +53,13 @@
 (def get-in-bmap
   #(get braille-map % "???"))
 
-(def str->bin
-  #(Integer/parseInt (str/trim %) 2))
-
-(def braille->ascii (comp get-in-bmap str->bin #(apply str %) reverse))
-
 (defn braille-decode [request]
   (let [data (get-in request [:params :data])]
-    (post-page (apply str (map get-in-bmap (map #(Integer. %) (str/split data #",")))))))
+    (->> (str/split data #",")
+         (map #(Integer. %))
+         (map get-in-bmap)
+         (apply str)
+         (post-page))))
 
 (defroutes app-routes
   (GET "/" [] get-page)

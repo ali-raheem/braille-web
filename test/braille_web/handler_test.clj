@@ -19,8 +19,4 @@
 (deftest get-in-bmap-test
   (testing "Testing get-in-bmap."
     (is (= (get-in-bmap 30) "t"))
-    (is (= (get-in-bmap 10) "???")))
-  (testing "Testing str->bin."
-    (is (= (str->bin "1101") 13)))
-  (testing "Functional test str to braille"
-    (is (= (apply str (map braille->ascii (partition 6 "101100011000001000000000110000101010100000011000101110100100001110"))) "hi, claire!"))))
+    (is (= (get-in-bmap 10) "???"))))

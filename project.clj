@@ -1,4 +1,4 @@
-(defproject braille-web "0.2.0-SNAPSHOT"
+(defproject braille-web "0.3.0-SNAPSHOT"
   :description "website with a RESTful api to decode braille."
   :url ""
   :min-lein-version "2.0.0"
