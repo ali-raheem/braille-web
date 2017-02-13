@@ -1,9 +1,9 @@
 body {
-    background-color: #e0e0e0;
+    background-color: #ffffad;
 }
 
 .footer {
-    background-color: #670175;
+    background-color: #adadff;
     font-weight: bold;
     width: 100%;
     position: absolute;
@@ -13,7 +13,7 @@ body {
 }
 
 .title-bar {
-    background-color: #670175;
+    background-color: #ffadd6;
     font-weight: bold;
     color: white;
     width: 100%;
@@ -23,7 +23,7 @@ body {
 }
 
 .page {
-    background-color: #f0f0f0;
+    background-color: #adffd6;
     color: black;
     margin: auto;
     width: 75%;
