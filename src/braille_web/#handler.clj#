@@ -3,8 +3,7 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [clojure.string :as str]
-            [hiccup.page :refer [html5 include-css include-js]])
-  )
+            [hiccup.page :refer [html5 include-css include-js]]))
 
 (def braille-mod-map
   {58 :number, 40 :letter, 32 :caps})
@@ -35,7 +34,7 @@
      [:div {:class "braille-tile"}
       [:input {:type "checkbox" :id "cb1"}] 
       [:input {:type "checkbox" :id "cb2"}] [:br]
-      [:input {:type "checkbox" :id "cb4"}] 
+   +   [:input {:type "checkbox" :id "cb4"}] 
       [:input {:type "checkbox" :id "cb8"}] [:br]
       [:input {:type "checkbox" :id "cb16"}]
       [:input {:type "checkbox" :id "cb32"}]]

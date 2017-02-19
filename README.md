@@ -10,9 +10,17 @@ You will need [Leiningen][] 2.0.0 or above installed.
 
 ## Running
 
-To start a web server for the application, run:
+To start a web server for the application you may either run:
+```
+java -jar /jar/braille-web-standalone.jar
+```
+Or do so via leinegen:
 
-    lein ring server
+```
+lein ring server
+```
+
+It should open a browser pointing to http://localhost:3000, otherwise navigate here and begin.
 
 ## Todo
 
